@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr" data-skin="sapin">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#16241D">
+<meta name="description" content="Parole : le réseau social où la réputation se gagne en tenant parole. On s'engage à voix haute, des témoins jugent, le résultat reste.">
+<meta property="og:title" content="Parole — ta réputation, c'est ce que tu tiens">
+<meta property="og:description" content="Un réseau social fait d'engagements datés, jugés par des témoins. Essaie la démonstration.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231F4D3A'/%3E%3Ctext x='29' y='46' font-family='Georgia,serif' font-size='42' fill='%23F7F1E1' text-anchor='middle'%3EP%3C/text%3E%3Ccircle cx='47' cy='43' r='4' fill='%23C8A96A'/%3E%3C/svg%3E">
+<title>Parole — ta réputation, c'est ce que tu tiens</title>
+<style>
+/* Page d'accueil autonome : aucune ressource externe. Trois ambiances reprises de l'application. */
+:root{--serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;--r:22px}
+[data-skin=sapin]{--deep:#16241D;--brand:#1F4D3A;--paper:#F7F1E1;--card:#FFFDF6;--ink:#16241D;--mute:#56645C;--line:#DDD3BC;--gold:#C8A96A;--on:#F7F1E1;--soft:#C8D4CC}
+[data-skin=chocolat]{--deep:#231813;--brand:#4A3226;--paper:#F4ECE2;--card:#FFFAF3;--ink:#231813;--mute:#6B5A50;--line:#E0D2C2;--gold:#C9A46B;--on:#F6EEE3;--soft:#D9C8B8}
+[data-skin=moderne]{--deep:#0B0B0D;--brand:#1D1D1F;--paper:#F5F5F7;--card:#FFFFFF;--ink:#1D1D1F;--mute:#5E5E63;--line:#DADADF;--gold:#0A84FF;--on:#F5F5F7;--soft:#C9C9CF}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.55 var(--sans);-webkit-font-smoothing:antialiased;transition:background .4s,color .4s}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 max(22px,env(safe-area-inset-left)) 0 max(22px,env(safe-area-inset-right))}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:var(--card);padding:10px 14px;border-radius:10px;z-index:99}
+
+/* Barre */
+.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--deep) 86%,transparent);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);color:var(--on);padding-top:env(safe-area-inset-top)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+.logo{font:400 26px/1 var(--serif);text-decoration:none;color:var(--on)}.logo i{color:var(--gold);font-style:normal}
+.nav nav{display:flex;gap:26px;align-items:center;font-size:15px}
+.nav nav a{text-decoration:none;opacity:.82}.nav nav a:hover{opacity:1}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 24px;border-radius:999px;background:var(--gold);color:#14110A;font-weight:650;text-decoration:none;font-size:16px;border:0;cursor:pointer;transition:transform .2s,filter .2s}
+[data-skin=moderne] .btn{color:#fff}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.06)}.btn:active{transform:scale(.98)}
+.btn.sm{min-height:38px;padding:0 16px;font-size:14.5px;opacity:1!important}
+.btn.ghost{background:transparent;color:var(--on);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--on) 40%,transparent)}
+@media(max-width:760px){.nav nav a:not(.btn){display:none}}
+
+/* Ouverture */
+.hero{background:radial-gradient(120% 90% at 85% 0%,color-mix(in srgb,var(--brand) 92%,#fff 8%),var(--deep) 62%);color:var(--on);padding:76px 0 96px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.eyebrow{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:18px}
+h1{font-size:clamp(44px,7.2vw,86px);line-height:1.02}
+.hero .lead{font-size:clamp(18px,2vw,21px);line-height:1.5;color:var(--soft);max-width:33em;margin:26px 0 34px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.fine{font-size:13.5px;color:var(--soft);opacity:.85;margin-top:16px}
+/* Carte d'exemple */
+.demo{position:relative}
+.pcard{background:var(--card);color:var(--ink);border-radius:26px;padding:22px 22px 18px;box-shadow:0 30px 70px -20px rgba(0,0,0,.55),0 2px 0 rgba(255,255,255,.5) inset;transform:rotate(-1.4deg);max-width:420px;margin-left:auto}
+.pcard.b{transform:rotate(1.6deg) translate(-34px,0);position:relative;z-index:2;margin-top:18px}
+.ph{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.av{width:42px;height:42px;border-radius:50%;background:linear-gradient(140deg,var(--brand),var(--deep));color:var(--on);display:grid;place-items:center;font:400 19px var(--serif);flex:none}
+.ph b{display:block;font-size:15.5px}.ph span{font-size:13px;color:var(--mute)}
+.pill{margin-left:auto;font-size:12.5px;font-weight:650;padding:5px 11px;border-radius:999px;background:color-mix(in srgb,var(--gold) 26%,transparent);white-space:nowrap}
+.pill.ok{background:color-mix(in srgb,#2E8B57 20%,transparent);color:#1C5C39}
+.pt{font:400 23px/1.25 var(--serif);margin-bottom:14px}
+.pm{display:flex;gap:8px;flex-wrap:wrap;font-size:13px;color:var(--mute);border-top:1px solid var(--line);padding-top:12px}
+.pm span{background:color-mix(in srgb,var(--line) 45%,transparent);padding:4px 10px;border-radius:999px}
+.tag{position:absolute;left:0;top:-30px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);opacity:.7}
+@media(max-width:900px){.hero{padding:48px 0 66px}.hero .wrap{grid-template-columns:1fr;gap:64px}.pcard{margin:0 auto}.pcard.b{transform:rotate(1.6deg) translate(8px,0)}}
+
+/* Sections */
+section{padding:92px 0}
+.kicker{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--brand);font-weight:650;margin-bottom:14px}
+[data-skin=moderne] .kicker{color:var(--gold)}
+h2{font-size:clamp(32px,4.4vw,52px);line-height:1.08;max-width:17em}
+.sub{color:var(--mute);font-size:18.5px;max-width:36em;margin-top:16px}
+.mani{background:var(--brand);color:var(--on);padding:74px 0}
+.mani p{font:400 clamp(30px,5vw,60px)/1.12 var(--serif);color:var(--soft)}
+.mani p:last-child{color:var(--on)}.mani p:last-child::after{content:".";color:var(--gold)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px;counter-reset:s}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 22px 24px;counter-increment:s}
+.step::before{content:counter(s);font:400 44px/1 var(--serif);color:var(--gold);display:block;margin-bottom:18px}
+h3{font-size:23px;line-height:1.2;margin-bottom:8px}
+.step p,.g p{color:var(--mute);font-size:15.5px}
+.dark{background:var(--deep);color:var(--on)}
+.dark .kicker{color:var(--gold)}.dark .sub{color:var(--soft)}
+.guards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:color-mix(in srgb,var(--on) 16%,transparent);border-radius:var(--r);overflow:hidden;margin-top:48px}
+.g{background:var(--deep);padding:28px 26px}
+.g p{color:var(--soft)}
+.g b{color:var(--gold);font-weight:600}
+.who{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+.who .step::before{content:none}
+.who .step{padding-top:28px}
+.who small{display:block;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);font-weight:650;margin-bottom:12px}
+[data-skin=moderne] .who small{color:var(--gold)}
+.skins{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.skin{display:flex;align-items:center;gap:12px;padding:10px 18px 10px 10px;border-radius:999px;border:1px solid var(--line);background:var(--card);font:inherit;font-size:15.5px;color:var(--ink);cursor:pointer;min-height:52px}
+.skin i{width:32px;height:32px;border-radius:50%;display:block}
+.skin[aria-pressed=true]{box-shadow:0 0 0 2px var(--ink)}
+.state{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:34px;margin-top:44px;display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.state ul{margin:10px 0 0;padding-left:20px;color:var(--mute);font-size:15.5px}.state li{margin:6px 0}
+details{border-bottom:1px solid var(--line);padding:6px 0}
+summary{cursor:pointer;list-style:none;padding:18px 34px 18px 0;font:400 21px/1.3 var(--serif);position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:14px;font:300 28px var(--sans);color:var(--brand);transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--mute);padding:0 0 20px;max-width:44em}
+.faq{max-width:820px;margin-top:36px}
+.end{background:radial-gradient(100% 120% at 50% 100%,var(--brand),var(--deep) 70%);color:var(--on);text-align:center;padding:110px 0}
+.end h2{margin:0 auto 30px;max-width:14em}
+footer{background:var(--deep);color:var(--soft);font-size:13.5px;padding:26px 0 calc(26px + env(safe-area-inset-bottom));border-top:1px solid color-mix(in srgb,var(--on) 12%,transparent)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:900px){section{padding:64px 0}.steps{grid-template-columns:1fr 1fr}.guards,.who,.state{grid-template-columns:1fr}.end{padding:80px 0}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}.cta .btn{width:100%;justify-content:center}}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="#" aria-label="Parole, haut de page">Parole<i>.</i></a>
+  <nav aria-label="Sections">
+    <a href="#principe">Principe</a><a href="#garde-fous">Garde-fous</a><a href="#pour-qui">Pour qui</a><a href="#questions">Questions</a>
+    <a class="btn sm" data-demo href="#">Essayer</a>
+  </nav>
+</div></header>
+
+<main id="contenu">
+<div class="hero"><div class="wrap">
+  <div>
+    <p class="eyebrow">Réseau social · prototype</p>
+    <h1>Ta réputation, c'est ce que tu tiens.</h1>
+    <p class="lead">Sur Parole, on ne publie pas des opinions. On donne sa parole, à voix haute, avec une échéance. Des témoins jugent. Le résultat reste.</p>
+    <div class="cta">
+      <a class="btn" data-demo href="#">Essayer la démonstration <span aria-hidden="true">→</span></a>
+      <a class="btn ghost" href="#principe">Voir le principe</a>
+    </div>
+    <p class="fine">Sans inscription. Deux minutes suffisent pour comprendre.</p>
+  </div>
+  <div class="demo" aria-label="Exemple de paroles, profils fictifs">
+    <span class="tag">Exemple</span>
+    <div class="pcard">
+      <div class="ph"><div class="av">I</div><div><b>Inès</b><span>donne sa parole</span></div><span class="pill">3 jours</span></div>
+      <p class="pt">« Je livre la maquette du site avant vendredi, 18 h. »</p>
+      <div class="pm"><span>3 témoins</span><span>un juré tiré au sort</span></div>
+    </div>
+    <div class="pcard b">
+      <div class="ph"><div class="av">M</div><div><b>Marc</b><span>échéance passée</span></div><span class="pill ok">Tenue</span></div>
+      <p class="pt">« Dix kilomètres dimanche, quoi qu'il arrive. »</p>
+      <div class="pm"><span>3 pour · 0 contre</span><span>vote à l'aveugle</span></div>
+    </div>
+  </div>
+</div></div>
+
+<div class="mani"><div class="wrap rv">
+  <p>Pas de likes.</p><p>Pas de fil sans fin.</p><p>Pas de contenu généré.</p><p>Juste ce que tu fais</p>
+</div></div>
+
+<section id="principe"><div class="wrap">
+  <p class="kicker">Le principe</p>
+  <h2 class="rv">Une parole, des témoins, un verdict.</h2>
+  <p class="sub rv">Quatre gestes, toujours les mêmes. Tout le reste du réseau en découle.</p>
+  <div class="steps">
+    <div class="step rv"><h3>Dis-le</h3><p>Tu dictes ton engagement, il devient un texte daté. Une phrase, une échéance.</p></div>
+    <div class="step rv"><h3>Choisis tes témoins</h3><p>Jusqu'à cinq personnes qui suivront ta parole. Un juré indépendant s'y ajoute, tiré au sort.</p></div>
+    <div class="step rv"><h3>Le verdict tombe</h3><p>À l'échéance, chacun vote sans voir le vote des autres. Tenue, non tenue, ou réparée.</p></div>
+    <div class="step rv"><h3>Ta fiabilité se construit</h3><p>Ton profil montre ce que tu as tenu, pas ce que tu as dit de toi.</p></div>
+  </div>
+</div></section>
+
+<section class="dark" id="garde-fous"><div class="wrap">
+  <p class="kicker">Les garde-fous</p>
+  <h2 class="rv">Conçu pour que tricher ne rapporte rien.</h2>
+  <p class="sub rv">Un réseau de promesses ne vaut que si les verdicts sont crédibles. Chaque règle répond à une façon connue de les fausser.</p>
+  <div class="guards rv">
+    <div class="g"><h3>Les amis complaisants</h3><p>Un juré tiré au sort parmi des membres sans lien avec toi vote aussi. <b>Sa voix compte double.</b></p></div>
+    <div class="g"><h3>Les échanges de bons procédés</h3><p>Deux personnes qui se valident mutuellement voient <b>leur vote réduit de moitié.</b></p></div>
+    <div class="g"><h3>L'effet de groupe</h3><p>Les votes restent <b>cachés jusqu'à la clôture.</b> Personne ne suit la majorité.</p></div>
+    <div class="g"><h3>Les promesses faciles</h3><p>Chaque parole porte une ambition. <b>Une parole exigeante pèse plus</b> qu'une formalité.</p></div>
+    <div class="g"><h3>L'empilement</h3><p><b>Trois paroles ouvertes au maximum.</b> On choisit ce qui compte.</p></div>
+    <div class="g"><h3>L'échéance qui glisse</h3><p>Le report existe, mais il est <b>limité à deux</b> et reste visible.</p></div>
+  </div>
+</div></section>
+
+<section id="pour-qui"><div class="wrap">
+  <p class="kicker">Pour qui</p>
+  <h2 class="rv">Là où une parole tenue vaut plus qu'un profil soigné.</h2>
+  <div class="who">
+    <div class="step rv"><small>Indépendants</small><h3>Prouver sa fiabilité</h3><p>Un historique de délais tenus, attesté par des tiers, en dit plus qu'une recommandation.</p></div>
+    <div class="step rv"><small>Équipes</small><h3>Un registre commun</h3><p>Les Espaces réunissent les engagements d'une équipe, avec des règles qui empêchent d'en faire un outil de surveillance.</p></div>
+    <div class="step rv"><small>Porteurs de projet</small><h3>S'engager en public</h3><p>Annonce un lancement, laisse d'autres déclarer leur soutien. Aucun argent ne circule sur la plateforme.</p></div>
+  </div>
+  <p class="kicker" style="margin-top:72px">Trois ambiances</p>
+  <h2 class="rv" style="font-size:clamp(26px,3.2vw,38px)">La parole est vieille comme le monde. L'interface a le droit d'avoir de l'allure.</h2>
+  <div class="skins" role="group" aria-label="Choisir l'ambiance de cette page">
+    <button class="skin" data-s="sapin" aria-pressed="true"><i style="background:#1F4D3A"></i>Sapin</button>
+    <button class="skin" data-s="chocolat" aria-pressed="false"><i style="background:#4A3226"></i>Chocolat</button>
+    <button class="skin" data-s="moderne" aria-pressed="false"><i style="background:#1D1D1F"></i>Moderne</button>
+  </div>
+</div></section>
+
+<section id="etat" style="padding-top:0"><div class="wrap">
+  <p class="kicker">Où en est le projet</p>
+  <h2 class="rv">Un prototype, dit comme tel.</h2>
+  <div class="state rv">
+    <div><h3>Ce qui existe</h3><ul><li>Une démonstration complète, avec des profils fictifs.</li><li>Tous les parcours : donner sa parole, témoigner, juger, réparer.</li><li>Une version ordinateur et une version téléphone.</li></ul></div>
+    <div><h3>Ce qui n'existe pas encore</h3><ul><li>Un réseau ouvert au public.</li><li>Une application sur les magasins d'applications.</li><li>Des tarifs : ils seront fixés une fois le produit arrêté.</li></ul></div>
+  </div>
+</div></section>
+
+<section id="questions" style="padding-top:0"><div class="wrap">
+  <p class="kicker">Questions</p>
+  <h2 class="rv">Ce qu'on nous demande en premier.</h2>
+  <div class="faq">
+    <details><summary>Et si je ne tiens pas ma parole ?</summary><p>Le verdict le dit, et il reste visible. Tu peux ensuite réparer : reconnaître, expliquer, proposer une suite. Une parole réparée n'efface pas l'échec, elle montre ce que tu en as fait.</p></details>
+    <details><summary>Mes paroles sont-elles forcément publiques ?</summary><p>Non. Une parole peut être publique, réservée à tes abonnés, à des personnes choisies ou à un Espace. Une parole privée compte dans ta fiabilité sans que son contenu soit affiché.</p></details>
+    <details><summary>Pourquoi seulement trois paroles ouvertes ?</summary><p>Parce qu'une limite oblige à choisir. Un réseau où l'on promet tout finit par ne rien mesurer.</p></details>
+    <details><summary>Est-ce qu'il faut parler ?</summary><p>Non. La dictée est le chemin le plus court, mais tout peut s'écrire au clavier, et tout ce qui est dit est aussi affiché en texte.</p></details>
+    <details><summary>Quand pourrai-je m'inscrire ?</summary><p>Pas encore. Un test privé en petit groupe précède toute ouverture. La démonstration permet déjà de juger le principe.</p></details>
+  </div>
+</div></section>
+
+<div class="end"><div class="wrap">
+  <h2 class="rv">Dis-le. Tiens-le. Qu'on le sache.</h2>
+  <a class="btn" data-demo href="#">Essayer la démonstration <span aria-hidden="true">→</span></a>
+</div></div>
+</main>
+
+<footer><div class="wrap"><span>© <span id="an">2026</span> Parole. Prototype, démonstration à profils fictifs.</span><span>Fait en France.</span></div></footer>
+
+<script>
+"use strict";
+/* Adresse de la démonstration : seule valeur à changer si l'application est hébergée ailleurs (par exemple "./app/"). */
+const DEMO = "index.html";
+document.querySelectorAll("[data-demo]").forEach(a => { a.href = DEMO; if (/^https:/.test(DEMO)) { a.target = "_blank"; a.rel = "noopener"; } });
+document.getElementById("an").textContent = new Date().getFullYear();
+const meta = document.querySelector('meta[name="theme-color"]');
+document.querySelectorAll(".skin").forEach(b => b.addEventListener("click", () => {
+  document.documentElement.dataset.skin = b.dataset.s;
+  document.querySelectorAll(".skin").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+  meta.content = getComputedStyle(document.documentElement).getPropertyValue("--deep").trim();
+}));
+const rv = document.querySelectorAll(".rv");
+if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -8% 0px" });
+  rv.forEach(e => io.observe(e));
+} else rv.forEach(e => e.classList.add("in"));
+</script>
+</body>
+</html>
