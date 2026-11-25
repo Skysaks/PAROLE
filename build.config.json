@@ -1,0 +1,129 @@
+{
+  "name": "Parole",
+  "repo": "Skysaks/PAROLE",
+  "lang": "fr",
+  "budgetKo": 300,
+  "pages": [
+    {
+      "src": "src/accueil.html",
+      "out": "dist/accueil.html",
+      "site": "index.html",
+      "e2e": {
+        "ready": "[data-demo]",
+        "flows": [
+          {
+            "name": "le lien de démonstration mène à l'application",
+            "steps": [
+              {
+                "click": "[data-demo]",
+                "wait": 1200
+              },
+              {
+                "see": "body"
+              }
+            ]
+          }
+        ]
+      },
+      "captures": {
+        "wait": 1500
+      }
+    },
+    {
+      "src": "src/app.html",
+      "out": "dist/parole.html",
+      "site": "parole.html",
+      "e2e": {
+        "ready": "body",
+        "flows": [
+          {
+            "name": "choix de l'ambiance puis les sections",
+            "steps": [
+              {
+                "repeat": "#onb-next",
+                "wait": 300
+              },
+              {
+                "click": "a[href=\"#explorer\"]:visible",
+                "wait": 400
+              },
+              {
+                "click": "a[href=\"#activite\"]:visible",
+                "wait": 400
+              },
+              {
+                "click": "a[href=\"#profil\"]:visible",
+                "wait": 400
+              },
+              {
+                "click": "a[href=\"#accueil\"]:visible",
+                "wait": 400
+              }
+            ]
+          },
+          {
+            "name": "onglets du fil",
+            "steps": [
+              {
+                "repeat": "#onb-next",
+                "wait": 300
+              },
+              {
+                "click": "[role=tab]:has-text('Abonnements')"
+              },
+              {
+                "click": "[role=tab]:has-text('Échéances')"
+              },
+              {
+                "click": "[role=tab]:has-text('Pour toi')"
+              }
+            ]
+          },
+          {
+            "name": "espaces, réglages et coulisses",
+            "only": "bureau",
+            "steps": [
+              {
+                "repeat": "#onb-next",
+                "wait": 300
+              },
+              {
+                "click": "a[href=\"#espaces\"]:visible",
+                "wait": 400
+              },
+              {
+                "click": "a[href=\"#donnees\"]:visible",
+                "wait": 400
+              },
+              {
+                "click": "a[href=\"#coulisses\"]:visible",
+                "wait": 400
+              }
+            ]
+          }
+        ]
+      },
+      "captures": {
+        "wait": 1500,
+        "desktop": [
+          {
+            "repeat": "#onb-next",
+            "wait": 800
+          }
+        ],
+        "mobile": [
+          {
+            "repeat": "#onb-next",
+            "wait": 800
+          }
+        ]
+      }
+    }
+  ],
+  "card": {
+    "kicker": "Réseau social · prototype",
+    "tagline": "La réputation se gagne en tenant parole, devant témoins.",
+    "background": "#16241D",
+    "accent": "#C8A96A"
+  }
+}

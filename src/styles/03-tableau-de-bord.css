@@ -1,0 +1,16 @@
+/* tableau de bord */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 16px 12px}
+.tile{background:var(--surface);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:4px;min-width:0}
+.tile.main{grid-column:1/-1;background:var(--hero);color:var(--on-hero);flex-direction:row;align-items:center;gap:20px;box-shadow:none;padding:22px}
+.tile .lab{font-size:.78rem;font-weight:650;text-transform:uppercase;letter-spacing:.06em;opacity:.72}
+.tile .big{font-size:1.3rem;font-weight:650;line-height:1.25;letter-spacing:-.015em;margin:4px 0 2px;overflow-wrap:break-word}
+.tile .num{font-size:2.6rem;font-weight:700;letter-spacing:-.04em;line-height:1.05;font-variant-numeric:tabular-nums}
+.tile .small{font-size:.82rem;line-height:1.4;color:var(--muted)}
+.grow{flex:1;min-width:0}
+.ring{position:relative;width:104px;height:104px;flex:none}
+.ringsvg{width:100%;height:100%}
+.rbg{fill:none;stroke:currentColor;opacity:.18;stroke-width:9}
+.rfg{fill:none;stroke-width:9;stroke-linecap:round;transition:stroke-dashoffset .9s cubic-bezier(.2,.8,.2,1)}
+.ringtxt{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
+.ringtxt b{font-size:1.5rem;font-weight:700;letter-spacing:-.03em;line-height:1.1}
+.ringtxt span{font-size:.72rem;opacity:.75}

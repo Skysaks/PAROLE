@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#F5F5F7">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Parole : le réseau où la réputation se gagne en tenant parole. On s'engage à voix haute, des témoins jugent, le résultat reste.">
+<meta property="og:title" content="Parole">
+<meta property="og:description" content="Le réseau où la réputation se gagne en tenant parole.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Parole">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231F4D3A'/%3E%3Ctext x='29' y='46' font-family='Georgia,serif' font-size='42' fill='%23F7F1E1' text-anchor='middle'%3EP%3C/text%3E%3Ccircle cx='47' cy='43' r='4' fill='%23C8A96A'/%3E%3C/svg%3E">
+<title>Parole</title>
+<link rel="stylesheet" href="styles/00-polices.css" data-bundle="styles">
+<link rel="stylesheet" href="styles/01-base.css" data-bundle="styles">
+<link rel="stylesheet" href="styles/02-ambiances.css" data-bundle="styles">
+<link rel="stylesheet" href="styles/03-tableau-de-bord.css" data-bundle="styles">
+<link rel="stylesheet" href="styles/04-cartes.css" data-bundle="styles">
+<link rel="stylesheet" href="styles/05-profil.css" data-bundle="styles">
+<link rel="stylesheet" href="styles/06-modale.css" data-bundle="styles">
+<link rel="stylesheet" href="styles/07-mobile.css" data-bundle="styles">
+</head>
+<body>
+<noscript><p style="font:17px/1.5 system-ui,sans-serif;max-width:32em;margin:4em auto;padding:0 1.2em">Parole a besoin de JavaScript pour fonctionner. Activez-le dans votre navigateur puis rechargez la page.</p></noscript>
+<a class="skip" href="#app">Aller au contenu</a>
+<div class="shell">
+  <div class="side">
+    <div class="mark">Parole<i>.</i></div>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="#accueil"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9h-6v-6H9v6H3z"/></svg><span>Accueil</span></a>
+      <a href="#explorer"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5"/></svg><span>Explorer</span></a>
+      <a class="sec2" href="#espaces"><svg viewBox="0 0 24 24"><path d="M4 21V5l8-2v18M12 9l8 2v10M2 21h20M7.5 9v0M7.5 13v0M7.5 17v0M16 14v0M16 18v0"/></svg><span>Espaces</span></a>
+      <a href="#activite"><svg viewBox="0 0 24 24"><path d="M6 17V11a6 6 0 0112 0v6l2 2H4zM10 21h4"/></svg><span>Activité</span><b class="badge" id="badge" hidden></b></a>
+      <a href="#profil"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span>Profil</span></a>
+      <a class="sec" href="#donnees"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span>Réglages</span></a>
+      <a class="sec" href="#coulisses"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><span>Coulisses</span></a>
+    </nav>
+    <button class="speak" id="speak"><svg viewBox="0 0 24 24"><path d="M12 15a4 4 0 004-4V6a4 4 0 00-8 0v5a4 4 0 004 4zm7-4h-2a5 5 0 01-10 0H5a7 7 0 006 6.9V21h2v-3.1A7 7 0 0019 11z"/></svg>Prendre la parole</button>
+    <div class="src" id="src"></div>
+  </div>
+  <main id="app" tabindex="-1"></main>
+  <aside class="rail" id="rail" aria-label="À découvrir"></aside>
+</div>
+<button class="fab" id="fab" aria-label="Prendre la parole"><svg viewBox="0 0 24 24"><path d="M12 15a4 4 0 004-4V6a4 4 0 00-8 0v5a4 4 0 004 4zm7-4h-2a5 5 0 01-10 0H5a7 7 0 006 6.9V21h2v-3.1A7 7 0 0019 11z"/></svg></button>
+<div id="modal"></div>
+<div id="toast" class="toast" hidden role="status"></div>
+<script src="js/01-etat-preferences.js" data-bundle="app"></script>
+<script src="js/02-utilitaires.js" data-bundle="app"></script>
+<script src="js/03-modele.js" data-bundle="app"></script>
+<script src="js/04-persistance.js" data-bundle="app"></script>
+<script src="js/05-lecture-vocale.js" data-bundle="app"></script>
+<script src="js/06-actions.js" data-bundle="app"></script>
+<script src="js/07-cartes.js" data-bundle="app"></script>
+<script src="js/08-vues.js" data-bundle="app"></script>
+<script src="js/09-espaces-rendu.js" data-bundle="app"></script>
+</body>
+</html>
